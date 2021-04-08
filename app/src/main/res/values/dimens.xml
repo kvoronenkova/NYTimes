@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_bottom">16dp</dimen>
+    <dimen name="height_avatar">300dp</dimen>
+    <dimen name="key_height">28dp</dimen>
+    <dimen name="margin_top_key">8dp</dimen>
+    <dimen name="margin_left_key">50dp</dimen>
+    <dimen name="margin_left_image">8dp</dimen>
+    <dimen name="text_size">16sp</dimen>
+    <dimen name="top_separator">1dp</dimen>
+    <dimen name="description_width">320dp</dimen>
+    <dimen name="top_separator2">2dp</dimen>
+    <dimen name="item_news_height">300dp</dimen>
+    <dimen name="item_news_padding">4dp</dimen>
+    <dimen name="item_image_height">150dp</dimen>
+    <dimen name="item_name_news_height">50dp</dimen>
+    <dimen name="item_text_news_height">100dp</dimen>
+    <dimen name="item_date_news_height">50dp</dimen>
+    <dimen name="text_size_name">20sp</dimen>
+    <dimen name="padding_text">10dp</dimen>
+    <dimen name="date_news_height">20dp</dimen>
+    <dimen name="text_size_date">11sp</dimen>
+    <dimen name="detail_backdrop_height">256dp</dimen>
+    <dimen name="size_NY_times">70sp</dimen>
+</resources>

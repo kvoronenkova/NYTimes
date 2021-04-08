@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">NY Times</string>
+    <string name="text1">Autotest specialist</string>
+    <string name="text2">Diploma of the MAU</string>
+    <string name="text3">Lazy ass</string>
+    <string name="text4" />
+    <string name="enter_message">Enter a message...</string>
+    <string name="send_message">Send message</string>
+    <string name="error_network">Error</string>
+    <string name="error_server">Warning</string>
+
+
+    <string name="menu_action_switch">About</string>
+    <string name="name_news">Название новости</string>
+    <string name="preview_news">краткое описание</string>
+    <string name="date_news">дата</string>
+    <string name="category">Category</string>
+    <string name="ny_times">NY Times</string>
+    <string name="welcome">Welcome!</string>
+</resources>

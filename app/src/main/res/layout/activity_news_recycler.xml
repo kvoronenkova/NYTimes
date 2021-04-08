@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_activity_news"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_collapseMode="pin">
+
+        <ImageButton
+            android:id="@+id/categoryMenu"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:background="@color/white"
+            android:src="@drawable/category_menu"/>
+
+        <ImageButton
+            android:id="@+id/about"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:background="@color/white"
+            android:src="@drawable/ic_launcher_about_foreground"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        tools:visibility="gone"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:context=".NewsRecyclerActivity"
+        tools:listitem="@layout/activity_news_list"/>
+
+</LinearLayout>
