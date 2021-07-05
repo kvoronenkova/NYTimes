@@ -20,26 +20,28 @@ class NewsRecyclerAdapter(private val context: Context, private val listener: Cl
     private val items: MutableList<NewsDTO> = ArrayList()
     var onSubscribe: ObservableOnSubscribe<NewsDTO> = ObservableOnSubscribe { emitter ->
         for (i in items.indices) {
-            emitter.onNext(items[i]!!)
+            emitter.onNext(items[i])
         }
         emitter.onComplete()
     }
+
     val observer: Observer<NewsDTO> = object : Observer<NewsDTO> {
         override fun onSubscribe(d: Disposable) {
-            Toast.makeText(context, "News", Toast.LENGTH_SHORT).show()
+//            TODO("Not yet implemented")
         }
 
-        override fun onNext(newsDTO: NewsDTO) {
-            Log.d("Тест123", "Название: " + newsDTO.title)
+        override fun onNext(t: NewsDTO) {
+//            TODO("Not yet implemented")
         }
 
         override fun onError(e: Throwable) {
-            Log.d("Тест123", "Упс ._.")
+//            TODO("Not yet implemented")
         }
 
         override fun onComplete() {
-            Log.d("Тест123", "Новости прочитаны")
+//            TODO("Not yet implemented")
         }
+
     }
     var observable = Observable.create(onSubscribe)
             .subscribeOn(Schedulers.io())
@@ -53,7 +55,7 @@ class NewsRecyclerAdapter(private val context: Context, private val listener: Cl
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TimesViewHolder {
         observable.subscribe(observer)
-        return TimesViewHolder.Companion.onCreateViewHolder(parent, glideRequestManager)
+        return TimesViewHolder.onCreateViewHolder(parent)
     }
 
     override fun getItemCount(): Int {
@@ -69,13 +71,4 @@ class NewsRecyclerAdapter(private val context: Context, private val listener: Cl
     interface ClickItemListener {
         fun clickOnItem(news: NewsDTO?)
     }
-
-    val categoryNews: List<String?>
-        get() {
-            val categoryList: MutableList<String?> = ArrayList()
-            for (i in items.indices) {
-                if (!categoryList.contains(items[i].section)) categoryList.add(items[i].section)
-            }
-            return categoryList
-        }
 }

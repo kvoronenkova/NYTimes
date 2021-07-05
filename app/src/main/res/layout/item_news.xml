@@ -7,8 +7,7 @@
     android:background="#4000"
     android:layout_margin="4dp"
     app:cardCornerRadius="8dp"
-    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
-    tools:context=".NewsListActivity">
+    tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

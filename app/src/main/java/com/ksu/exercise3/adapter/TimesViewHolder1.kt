@@ -13,7 +13,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.ksu.exercise3.R
 import com.ksu.exercise3.dto.NewsDTO
 
-class TimesViewHolder(itemView: View, private val newsLoader: RequestManager) : RecyclerView.ViewHolder(itemView) {
+class TimesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val imageView: ImageView
     private val nameNewsView: TextView
     private val textNewsView: TextView
@@ -27,10 +27,10 @@ class TimesViewHolder(itemView: View, private val newsLoader: RequestManager) : 
     }
 
     companion object {
-        private const val LAYOUT = R.layout.activity_news_list
-        fun onCreateViewHolder(parent: ViewGroup, glideRequestManager: RequestManager): TimesViewHolder {
+        private const val LAYOUT = R.layout.item_news
+        fun onCreateViewHolder(parent: ViewGroup): TimesViewHolder {
             return TimesViewHolder(
-                    LayoutInflater.from(parent.context).inflate(LAYOUT, parent, false), glideRequestManager)
+                    LayoutInflater.from(parent.context).inflate(LAYOUT, parent, false))
         }
     }
 

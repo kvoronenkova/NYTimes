@@ -8,5 +8,5 @@ import retrofit2.http.Path
 
 interface NewsEndpoint {
     @GET("{period}.json")
-    fun period(@Path("period") period: String?): Single<Response<ResponseDTO?>?>?
+    fun period(@Path("period") period: String?): Single<Response<ResponseDTO>>?
 }
