@@ -1,19 +1,14 @@
-package com.ksu.exercise3
+package com.ksu.exercise3.presentation.detail
 
-import android.annotation.SuppressLint
-import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebViewClient
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
-import com.ksu.exercise3.dto.NewsDTO
+import com.ksu.exercise3.R
 import kotlinx.android.synthetic.main.fragment_detail_news.*
-import kotlinx.android.synthetic.main.fragment_detail_news.view.*
 
 class DetailNewsFragment : Fragment() {
 
@@ -23,13 +18,20 @@ class DetailNewsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        webView.settings.javaScriptEnabled = true
-        val url = arguments?.getString(URL)
-        webView.webViewClient = WebViewClient()
-        webView.loadUrl(url!!)
+        val url = requireArguments().getString(URL)
+
+        webView.run{
+            settings.javaScriptEnabled = true
+            webViewClient = WebViewClient()
+            loadUrl(url!!)
+        }
+
         val appBarLayout = view.findViewById<Toolbar>(R.id.toolbar)
-        appBarLayout.setNavigationOnClickListener { v: View? -> requireActivity().onBackPressed() }
-        appBarLayout.title = arguments?.getString(CATEGORY)
+
+        appBarLayout.apply {
+            setNavigationOnClickListener{ requireActivity().onBackPressed()}
+            title = requireNotNull(arguments).getString(CATEGORY)
+        }
     }
 
     companion object {

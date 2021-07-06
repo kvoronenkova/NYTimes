@@ -1,4 +1,4 @@
-package com.ksu.exercise3.dto
+package com.ksu.exercise3.data.dto
 
 import com.google.gson.annotations.SerializedName
 
@@ -7,7 +7,7 @@ class NewsDTO {
     val url: String? = null
 
     @SerializedName("published_date")
-    val published_date: String? = null
+    val publishedDate: String? = null
 
     @SerializedName("title")
     val title: String? = null

@@ -1,6 +1,6 @@
 package com.ksu.exercise3.network
 
-import com.ksu.exercise3.endpoints.NewsEndpoint
+import com.ksu.exercise3.data.endpoints.NewsEndpoint
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -42,10 +42,10 @@ class Controller private constructor() {
         private var controller: Controller? = null
 
         @get:Synchronized
-        val instance: Controller?
+        val instance: Controller
             get() {
                 if (controller == null) controller = Controller()
-                return controller
+                return controller!!
             }
     }
 

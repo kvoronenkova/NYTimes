@@ -6,17 +6,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.ksu.exercise3.R
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_about.*
 
 class AboutFragment : Fragment() {
     private var userMessage: String? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_about, container)
+        return inflater.inflate(R.layout.fragment_about, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -33,11 +31,13 @@ class AboutFragment : Fragment() {
 
     private fun emailSender(addresses: Array<String>?, subject: String?, attachment: Uri?) {
         val intent = Intent(Intent.ACTION_SEND)
-        intent.type = "text/plain"
-        intent.putExtra(Intent.EXTRA_EMAIL, addresses)
-        intent.putExtra(Intent.EXTRA_SUBJECT, "Hello")
-        intent.putExtra(Intent.EXTRA_TEXT, subject)
-        intent.putExtra(Intent.EXTRA_STREAM, attachment)
+        intent.apply {
+            type = "text/plain"
+            putExtra(Intent.EXTRA_EMAIL, addresses)
+            putExtra(Intent.EXTRA_SUBJECT, "Hello")
+            putExtra(Intent.EXTRA_TEXT, subject)
+            putExtra(Intent.EXTRA_STREAM, attachment)
+        }
 
         if (intent.resolveActivity(requireActivity().packageManager) != null) {
             startActivity(intent)
@@ -45,7 +45,7 @@ class AboutFragment : Fragment() {
     }
 
     private fun openWebPage(url: String?) {
-        val webpage = Uri.parse(url)
-        startActivity(Intent(Intent.ACTION_VIEW, webpage))
+        val webPage = Uri.parse(url)
+        startActivity(Intent(Intent.ACTION_VIEW, webPage))
     }
 }
