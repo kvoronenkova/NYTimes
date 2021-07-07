@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,10 +17,11 @@ import com.ksu.exercise3.presentation.adapter.NewsRecyclerAdapter.ClickItemListe
 import com.ksu.exercise3.utils.navigate
 import com.ksu.exercise3.utils.navigateToDetail
 import kotlinx.android.synthetic.main.fragment_main.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainFragment : Fragment(), ClickItemListener {
 
-    private val viewModel: MainViewModel by viewModels()
+    private val viewModel: MainViewModel by viewModel()
     private var newsRecyclerAdapter: NewsRecyclerAdapter? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -49,8 +49,8 @@ class MainFragment : Fragment(), ClickItemListener {
     }
 
     private fun checkResponseAndShowState(list: List<NewsDomain>) {
-        newsRecyclerAdapter!!.replaceItems(list)
-        progressBar!!.visibility = View.GONE
+        newsRecyclerAdapter?.replaceItems(list)
+        progressBar.visibility = View.GONE
     }
 
     override fun onDestroy() {

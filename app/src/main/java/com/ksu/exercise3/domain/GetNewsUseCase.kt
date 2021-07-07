@@ -4,7 +4,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
-class GetNewsUseCase(private val repository: LoadNewsRepository) {
+class GetNewsUseCase(private val repository: LoadNewsRepositoryImp) {
 
     private var periodNum: String? = null
     private val compositeDisposable = CompositeDisposable()

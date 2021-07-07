@@ -2,22 +2,22 @@ package com.ksu.exercise3.data.dto
 
 import com.google.gson.annotations.SerializedName
 
-class NewsDTO {
-    @SerializedName("url")
-    val url: String? = null
+class NewsDTO(
+        @SerializedName("url")
+        val url: String,
 
-    @SerializedName("published_date")
-    val publishedDate: String? = null
+        @SerializedName("media")
+        val media: List<Media>? = null,
 
-    @SerializedName("title")
-    val title: String? = null
+        @SerializedName("published_date")
+        val publishedDate: String,
 
-    @SerializedName("abstract")
-    val previewText: String? = null
+        @SerializedName("title")
+        val title: String,
 
-    @SerializedName("section")
-    val section: String? = null
+        @SerializedName("abstract")
+        val previewText: String,
 
-    @SerializedName("media")
-    val media: List<Media>? = null
-}
+        @SerializedName("section")
+        val section: String
+)

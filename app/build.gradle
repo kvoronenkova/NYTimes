@@ -11,14 +11,14 @@ android {
         viewBinding true
     }
 
-
-
     defaultConfig {
         applicationId "com.ksu.exercise3"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
+        buildConfigField("String", "API_KEY", "\"dfoqo2KLBJ3PmQHG1HWoidvru0BablNq\"")
+        buildConfigField("String", "API_URL", "\"https://api.nytimes.com/svc/mostpopular/v2/viewed/\"")
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -69,7 +69,8 @@ dependencies {
 
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
-
+    implementation ("io.insert-koin:koin-android:3.0.1")
+    implementation ("io.insert-koin:koin-android-ext:3.0.1")
 }
 repositories {
     maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }

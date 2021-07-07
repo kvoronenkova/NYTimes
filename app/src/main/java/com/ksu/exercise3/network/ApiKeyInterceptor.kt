@@ -1,16 +1,18 @@
 package com.ksu.exercise3.network
 
+import com.ksu.exercise3.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.Response
 import java.io.IOException
 
-class ApiKeyInterceptor private constructor(private val apiKey: String) : Interceptor {
+class ApiKeyInterceptor() : Interceptor {
+
     @Throws(IOException::class)
     override fun intercept(chain: Interceptor.Chain): Response {
         val requestWithoutApiKey = chain.request()
         val url = requestWithoutApiKey.url()
                 .newBuilder()
-                .addQueryParameter(PARAM_API_KEY, apiKey)
+                .addQueryParameter(PARAM_API_KEY, BuildConfig.API_KEY)
                 .build()
         val requestWithAttachedApiKey = requestWithoutApiKey.newBuilder()
                 .url(url)
@@ -20,8 +22,5 @@ class ApiKeyInterceptor private constructor(private val apiKey: String) : Interc
 
     companion object {
         private const val PARAM_API_KEY = "api-key"
-        fun create(apiKey: String): Interceptor {
-            return ApiKeyInterceptor(apiKey)
-        }
     }
 }
