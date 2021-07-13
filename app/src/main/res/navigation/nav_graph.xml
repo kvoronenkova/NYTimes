@@ -19,6 +19,6 @@
         android:label="AboutFragment" />
     <fragment
         android:id="@+id/detailNewsFragment"
-        android:name="com.ksu.exercise3.DetailNewsFragment"
+        android:name="com.ksu.exercise3.presentation.detail.DetailNewsFragment"
         android:label="DetailNewsFragment" />
 </navigation>

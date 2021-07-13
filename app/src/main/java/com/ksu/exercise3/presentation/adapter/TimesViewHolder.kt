@@ -1,4 +1,3 @@
-
 package com.ksu.exercise3.presentation.adapter
 
 import android.view.LayoutInflater
