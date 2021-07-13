@@ -3,10 +3,9 @@ package com.ksu.exercise3.utils
 import androidx.annotation.IdRes
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.navigation.ActivityNavigator
 import androidx.navigation.fragment.findNavController
-import com.ksu.exercise3.dto.NewsDTO
+import com.ksu.exercise3.domain.NewsDomain
 
 fun Fragment.navigate(@IdRes destination: Int) = findNavController().navigate(destination)
 
-fun Fragment.navigateToDetail(@IdRes destination: Int, data: NewsDTO) = findNavController().navigate(destination, bundleOf("URL" to data.url))
+fun Fragment.navigateToDetail(@IdRes destination: Int, data: NewsDomain) = findNavController().navigate(destination, bundleOf("URL" to data.url))

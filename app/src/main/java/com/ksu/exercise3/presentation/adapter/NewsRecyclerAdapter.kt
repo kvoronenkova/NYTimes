@@ -6,7 +6,7 @@ import com.bumptech.glide.RequestManager
 import com.ksu.exercise3.domain.NewsDomain
 import java.util.*
 
-class NewsRecyclerAdapter(private val requestManager: RequestManager, private val listener: ClickItemListener, ) : RecyclerView.Adapter<TimesViewHolder>() {
+class NewsRecyclerAdapter(private val requestManager: RequestManager, private val listener: ClickItemListener) : RecyclerView.Adapter<TimesViewHolder>() {
     private val items: MutableList<NewsDomain> = ArrayList()
 
     override fun onBindViewHolder(holder: TimesViewHolder, position: Int) {
